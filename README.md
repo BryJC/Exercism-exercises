@@ -1,1 +1,0 @@
-exercism.io exercises: currently only python solutions
