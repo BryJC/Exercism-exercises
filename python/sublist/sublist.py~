@@ -19,6 +19,6 @@ def check_slice(checkList, length):
      len(second list above) elements. This is repeated until the last element
      in checkList has been included in a slice"""
      
-    return [checkList[x:x+length] for x in range(len(checkList)-length+1)]    
+    return [checkList[x:x+length] for x in xrange(len(checkList)-length+1)]    
 
             

@@ -1,7 +1,7 @@
 def sieve(limit):
 
     limit_list = range(2, limit+1)
-    mark_list = [[n, True] for n in limit_list]
+    mark_list = {n: True for n in range(2, limit+1)}
     
     m = 2
     for i in limit_list:
