@@ -1,8 +1,4 @@
-from collections import defaultdict
-
+from collections import Counter as C
+#return Counter(dictionary) type collection
 def word_count(text):
-    txt_split = text.split()
-    d = defaultdict(int)
-    for i in txt_split:
-        d[i] += 1
-    return d
+    return C(text.split())

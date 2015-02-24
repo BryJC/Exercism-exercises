@@ -12,7 +12,7 @@ class SpaceAge(object):
             )
             
         for planet in self.ratio.keys():
-            setattr(self, planet, self.on_planet(planet))
+            setattr(self, self.on_planet(planet))
 
     def on_planet(self, planet):
     #Returns function converting seconds into years on planet relative to Earth
