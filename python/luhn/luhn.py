@@ -1,62 +1,23 @@
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        class Luhn(object):
-    
+class Luhn(object):
+   
     def __init__(self,  number=0):
-        self.number = list(str(number))
+        self.number = number
     
     def addends(self):
-        new_number = []
-        for i, e in list(enumerate(list(reversed(self.number)))):
-            i_ = int(i)
-            e_ = int(e)
-            if i_ == 0:
-                new_number.append(e_)
-            elif i_%2 == 0:
-                new_number.append(e_)
-            else:
-                if e_*2 >= 10:
-                    new_number.append(e_*2-9)
-                else:
-                    new_number.append(e_*2)
-        return list(reversed(new_number))
-                
+        digits = [int(i) for i in str(self.number)]
+        #create lambda function that will double or double-9 a number 'n'
+        transform = lambda n : (2 * n - 9) if (n > 4) else (2 * n)
+        #return num list from digits where every other n has been 'transformed'
+        return [(transform(n) if (i % 2 == 0) else n)
+                for i, n in enumerate(digits, start=len(digits) % 2)]              
         
     def checksum(self):
-        sum_ = reduce(lambda x, y: x+y, (self.addends()))
-        return sum_%10
+        return sum(self.addends()) % 10
         
     def is_valid(self):
-        if self.checksum() == 0:
-            return True
-        else:
-            return False
+        return self.checksum() == 0
             
     @staticmethod    
-    def create(number):
-        
-        new_number = []
-        for i, e in list(enumerate(list(reversed(list(str(number)))))):
-            i_ = int(i)
-            e_ = int(e)
-            if i_ == 0:
-                if e_*2 >= 10:
-                    new_number.append(e_*2-9)
-                else:
-                    new_number.append(e_*2)
-            elif i_%2 == 0:
-                if e_*2 >= 10:
-                    new_number.append(e_*2-9)
-                else:
-                    new_number.append(e_*2)
-            else:
-                new_number.append(e_)
-        new_number= list(reversed(new_number))
-        
-        for i in range(0, 9):
-            x = (reduce(lambda x, y: x+y, (new_number)) + i)%10
-            if x == 0:
-                create_number = i
-                break
-            else:
-                pass
-                
-        return int(str(number) + str(create_number))
+    def create(n):
+        diff = (10 - Luhn(n * 10).checksum()) % 10
+        return 10 * n + diff
