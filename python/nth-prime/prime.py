@@ -9,4 +9,3 @@ def nth_prime(position):
             primes_list.append(c)
             c += 1
     return primes_list[position-1]
-    
