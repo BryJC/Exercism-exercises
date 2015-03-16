@@ -125,7 +125,7 @@ class MinesweeperTest(unittest.TestCase):
                "|   * |",
                "|     |",
                "|     |",
-               "| *   |",
+               "| *   |",0
                "+-----+"]
         out = ["+-----+",
                "|  111|",
