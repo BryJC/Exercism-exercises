@@ -5,7 +5,7 @@ class Phone(object):
     def __init__(self, number):
         x = ''.join(re.findall("\d+", number))
         if len(x) > 10:
-            if x[0] == '1':
+            if len(x) == 11 and x[0] == '1':
                 self.number = x[1:]
             else:
                 self.number = '0000000000'

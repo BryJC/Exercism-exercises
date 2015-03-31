@@ -18,4 +18,6 @@ class Phone(object):
         return self.number[0:3]
         
     def pretty(self):
-        pass
+        return "({}) {}-{}".format(self.number[:3],
+                                   self.number[3:6],
+                                   self.number[6:])
