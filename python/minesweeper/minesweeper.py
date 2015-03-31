@@ -44,4 +44,4 @@ def check_spots(blank_array):
                 if count != 0:
                     blank_array.itemset(n, count)
             n += 1
-    return blank_array   
+    return blank_array

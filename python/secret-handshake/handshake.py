@@ -36,4 +36,4 @@ def bin_change(number):
     except ValueError:
         if number == str(number):
             return None
-        return int(number)  
+        return int(number)

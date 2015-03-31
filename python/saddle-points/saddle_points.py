@@ -1,17 +1,17 @@
 def saddle_points(array):
     points = set()
-    if array:        
-        if any(len(line) != len(array[0]) for line in array):
-            raise ValueError
-        else:       
+    if array:
+        try:
             row_max = list(enumerate([max(row) for row in array]))
-            
-            colminf = lambda matrix, i: min([row[i] for row in matrix])
-            column_min = list(enumerate([colminf(array, i) 
+            column_min = list(enumerate([column_min_func(array, i) 
                                             for i in range(len(array[0]))]))
-                                            
-            for row_place, row_value in row_max:
-                for col_place, col_value in column_min:
-                    if row_value == col_value:
-                        points.add((row_place, col_place))
+            for a, b in row_max:
+                for c, d in column_min:
+                    if b == d:
+                        points.add((a, c))
+        except IndexError:
+            raise ValueError
     return points
+    
+def column_min_func(matrix, i):
+    return min([row[i] for row in matrix])

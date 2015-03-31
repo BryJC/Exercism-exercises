@@ -44,4 +44,4 @@ class Cipher(object):
 class Caesar(Cipher):
     
     def __init__(self):
-        super(Caesar, self).__init__('d')    
+        super(Caesar, self).__init__('d')

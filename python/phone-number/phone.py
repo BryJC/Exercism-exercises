@@ -4,14 +4,12 @@ class Phone(object):
 
     def __init__(self, number):
         x = ''.join(re.findall("\d+", number))
-        if len(x) > 10:
+        if len(x) != 10:
             if len(x) == 11 and x[0] == '1':
                 self.number = x[1:]
             else:
-                self.number = '0000000000'
-        elif len(x) < 10:
-            self.number = '0000000000'
-        if len(x) == 10:
+                self.number = '0'*10
+        elif len(x) == 10:
             self.number = x
     
     def area_code(self):

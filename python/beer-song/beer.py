@@ -1,5 +1,3 @@
-#Beer songs
-
 def verse(num):
     if num == 0:
         return ("No more bottles of beer on the wall, no more bottles of beer.\n"

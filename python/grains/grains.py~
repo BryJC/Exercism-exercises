@@ -1,5 +1,0 @@
-def on_square(square):
-    pass
-    
-def total_after(square):
-    return 2**square-1

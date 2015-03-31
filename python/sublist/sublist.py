@@ -3,7 +3,7 @@ SUBLIST, SUPERLIST, EQUAL, UNEQUAL = range(4)
 def check_lists(A, B):
     
     if A == B:
-        return EQUALqu
+        return EQUAL
     elif A in check_slice(B, len(A)):
         return SUBLIST
     elif B in check_slice(A, len(B)):
@@ -19,6 +19,4 @@ def check_slice(checkList, length):
      len(second list above) elements. This is repeated until the last element
      in checkList has been included in a slice"""
      
-    return [checkList[x:x+length] for x in xrange(len(checkList)-length+1)]    
-
-            
+    return [checkList[x:x+length] for x in xrange(len(checkList)-length+1)]

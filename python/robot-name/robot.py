@@ -12,4 +12,4 @@ class Robot(object):
         return ''.join(char+num)
     
     def reset(self):
-        return setattr(self, 'name', 'AA000')    
+        return setattr(self, 'name', 'AA000')

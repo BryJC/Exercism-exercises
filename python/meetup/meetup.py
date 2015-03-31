@@ -20,4 +20,4 @@ def meetup_day(year, month, name, ordinal):
             except ValueError:
                 pass
                    
-    return dt.date(year, month, day)     
+    return dt.date(year, month, day)

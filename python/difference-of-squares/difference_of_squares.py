@@ -6,5 +6,3 @@ def square_of_sum(N):
     
 def sum_of_squares(N):
     return sum(x**2 for x in xrange(N+1))
-    
-

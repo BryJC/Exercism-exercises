@@ -1,5 +1,3 @@
-# THIS WORKED!!!!!! WOOOOOOOOOOOOO (March 30th 2015)
-
 # program to consolidate files in exercism-python exercises after restore
 import os, shutil, glob, re
 

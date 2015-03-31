@@ -39,4 +39,4 @@ def gcd(x, y):
 #determines if given tuple is a pythagorean triplet                
 def is_triplet((a, b, c)):
     a, b, c = sorted((a, b, c))
-    return a**2 + b**2 == c**2    
+    return a**2 + b**2 == c**2
